@@ -123,3 +123,21 @@
     \choice Because goodness-of-fit tests are designed to detect any deviations from a specific expected distribution and can distinguish between any types of interference since they are all characterized statistically.
     \choice None of the others.
 \end{checkboxes}
+
+\question{
+    Consider the following measurement equation for the pseudorange :
+    \[
+    \rho_j = \sqrt{(x_j - x_u)^2 + (y_j - y_u)^2 + (z_j - z_u)^2} + b_{ut},
+    \]
+    where \( x_j, y_j, z_j \) are the \( j \)-th satellite position coordinates, \( x_u, y_u, z_u \) are the user position coordinates, and \( b_{ut} \) is the user clock bias.
+    Try to match each set of variables with their role in the estimation process.
+}
+\begin{solution}
+    \begin{itemize}
+        \item \textbf{b_{ut}}: Unknown, to be estimated,
+        \item \textbf{\rho_j}: Measured by the receiver
+        \item \textbf{x_j, y_j, z_j}: Known, computed from the satellite broadcast message,
+        \item \textbf{x_u, y_u, z_u}: Unknown, to be estimated
+    \end{itemize}
+    "Known, downloaded from the GNSS control segment" is not a valid answer
+\end{solution}
