@@ -238,24 +238,29 @@
     This solution got 4/6 points. Comments were "1 ok, 2 no OWE, 3 ok".
 
     The main steps are: listen to the beacons, probe the AP, do the authentication to excange the keys for confidentiality, then associate.
-    0) (optional) AP sends beacon in broadcast containing SSID e BSSID
-    1) STA sends Probe request to AP requesting authentication informations
-    2) AP reply providing which autentication mechanism is required
-    3) STA makes an authentication request to AP
-    4) AP confirms the authentication success or denies the connection
-    5) STA asks for association
-    6) AP confirm association
-    7) normal encrypted data flow
+    \begin{enumerate} \setcounter{enumi}{-1} 
+        \item (optional) AP sends beacon in broadcast containing SSID e BSSID
+        \item STA sends Probe request to AP requesting authentication informations
+        \item AP reply providing which autentication mechanism is required
+        \item STA makes an authentication request to AP
+        \item AP confirms the authentication success or denies the connection
+        \item STA asks for association
+        \item AP confirm association
+        \item normal encrypted data flow
+    \end{enumerate}
+    
     
     In case of an hidden AP the STA must know the BSSID in order to send directly to the AP the probe request and gain all the connection essential informations
     The authentication can happen using OWE which allow for a key excange using diffie hellman to get a pairwise transient key so that the communication between STA and AP are encrypted from the other STAs connected to the same AP.
     The simplest attacks possible are De-authentication and De-association attacks where an attacker can exploit the deauthentication and dissassociation messages to interrupt an STA connection, requiring it to reauthenticate or reassociate respectively.
     The exchange of keys using OWE requires a public number G (sent to the STA during probe response), during the authentication:
     
-    1) STA sends to AP G^x
-    2) AP sends to STA G^y
-    3) both calculate G^(x*y) and set it as PMK (pairwise master key)
-    4) they use it for the 4-way handshake with EAPoL to exchange PTK and GTK (pairwise transient key and group transient key)
+    \begin{enumerate}
+        \item STA sends to AP $G^x$
+        \item AP sends to STA $G^y$
+        \item both calculate $G^(x*y)$ and set it as PMK (pairwise master key)
+        \item they use it for the 4-way handshake with EAPoL to exchange PTK and GTK (pairwise transient key and group transient key)
+    \end{enumerate}
 
     This way you can have a secure connection even in an open wireless channel. This is vulnerable to the man in the middle of diffie hellman.
     The EAPoL 4-way handshake is vulnerable to eavesdropping and the key can be calculated offline. OWE ensure that the offline brute force is done using all possible combinations insteat of a dictionary
