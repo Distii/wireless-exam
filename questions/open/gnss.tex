@@ -145,3 +145,18 @@
         \item Provide examples of scenarios where high and low DOP values impact GNSS performance.
     \end{itemize}
 \end{parts}
+
+\question{Which three system segments comprise a GNSS? Briefly describe their role and characteristics as part of the overall system.
+    \begin{enumerate}
+        \item Identify the three segments that make up a GNSS. (2 points)
+        \item Briefly describe the role, characteristics, and challenges of each GNSS segment. (3 points)
+        \item How do these segments interact to ensure the system's overall accuracy, reliability, and functionality? (1 point)
+    \end{enumerate}
+
+}
+\begin{solution}
+    Comment: 5.5/6; 1 ok; 2 challenges not really discussed (2.75); 3 Interaction can be partially inferred from the discussion but not explicitly addressed (0.75)
+
+
+    The three segments that composes a GNSS systems are: space segments, control segments and user segments. The space segments is composed by a constellation of satellites that keeps broadcasting information to the receiver to allow the computation of their PVT. The satellites will transmit a carrier (basic frequency of the signal used to modulate the spreading codes and the navigation data), spreading codes (enhance the robustness of the signals against interferences and allows signals to be discriminated by unique orthogonal codes) and navigation data that will help in the computations. The control segments are ground based segment that are placed all over the earth. Those segments allows to have timing synchnization of the clock of the satellites with the earth. Those segments are divided into: tracking station, master station and uploading station. The tracking station will register the orbital data of satellites and the master will compute calculation on those data extracting information to ensure accuracy of timing information. The uploading will send back data to satellites to update informations. The user segments are the receivers that will take the signals broadcasted from multiple satellites and compute their PVT based on those informations. In particular, the receiver will lock onto the carrier frequency and use the spreading codes to distinguish the signals different signals, from those will extract the transmission time and compares it with the reception time and compure the travelling time. The tracvelling time will be used to compute the pseudoranges that contains lack in synchronization due to errors and have to go in a trilateration proces to exract the three spacial coordinates and the time coordinates (clock bias) that will be used to adjust the measurements and allow the user to compute its position with a precise accuracy in time and space.
+\end{solution}

@@ -74,13 +74,9 @@
 \begin{solution}
     \begin{itemize}
         \item \textbf{WEP Password cracking} → Leverage the reusage of Initialization Vector to create a collision and then break the RC4 key.
-
         \item \textbf{NAV attack}: → An attack where the attacker manipulates the frame duration value to prevent other devices from accessing the channel.
-
         \item \textbf{Rouge Access Point}: → A fake AP that impersonates the real AP.
-
         \item \textbf{De-authentication attack}: → The attacker sends forged de-authentication frames to force a STA to repeat the connection process.
-
         \item \textbf{Chopchop attack} → The process to recover the plaintext content of a frame by replaying a portion of the original frame.
     \end{itemize}
 \end{solution}
@@ -124,6 +120,12 @@
         \item AP sends ACK(A)
         \item The transmission is completed
     \end{enumerate}
+    "AP received RTS and waits SIFS time"
+    "Ap sends CTS"
+    "A receives CTS and waits DIFS time"
+    "A receives CTS and waits SIFS time"
+    "A sends RTS"
+    are not correct steps.
 \end{solution}
 
 \question{Consider the case a STA would like to transmit a frame to the AP. No other transmissions are present. RTS/CTS are \textit{ENABLED}. Put in the correct order over time the sequence of events that would occur:}
